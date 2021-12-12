@@ -1,9 +1,13 @@
 const groupBy = (arr, key) => {
-    if (arr === undefined) {
+
+    if (!Array.isArray(arr)) {
         throw new Error("не передан массив");
-    } else if (key === undefined) {
+    }
+    if (typeof (key) === undefined) {
         throw new Error("не передан ключ");
-    } else {
+    }
+
+    else {
         return arr.reduce((acc, item) => {
             if (key in item) {
                 (acc[item[key]] = acc[item[key]] || []).push(item);
