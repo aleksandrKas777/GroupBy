@@ -5,9 +5,7 @@ const groupBy = (arr, key) => {
     }
     if (typeof (key) === undefined) {
         throw new Error("не передан ключ");
-    }
-
-    else {
+    } else {
         return arr.reduce((acc, item) => {
             if (key in item) {
                 (acc[item[key]] = acc[item[key]] || []).push(item);
